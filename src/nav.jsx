@@ -12,7 +12,11 @@ const Nav = ({ onOpen }) => {
   };
   return (
     <nav className="nav">
-      <div className="nav-logo">
+      <div
+        className="nav-logo"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        style={{ cursor: "pointer" }}
+      >
         KU<sup>®</sup>
       </div>
       <div className="nav-links">
