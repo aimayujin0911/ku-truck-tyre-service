@@ -1,4 +1,4 @@
-const Subpage = ({ page, onClose }) => {
+const Subpage = ({ page }) => {
   if (!page) return null;
 
   const pages = {
@@ -88,10 +88,10 @@ const Subpage = ({ page, onClose }) => {
   if (!p) return null;
 
   return (
-    <div className={"subpage open"}>
+    <div className="subpage">
       <div className="subpage-head">
         <span>{p.label}</span>
-        <span className="subpage-close" onClick={onClose}>CLOSE ✕</span>
+        <a className="subpage-close" href="./" style={{ textDecoration: "none" }}>← BACK TO HOME</a>
       </div>
       <div className="subpage-body">{p.body}</div>
     </div>

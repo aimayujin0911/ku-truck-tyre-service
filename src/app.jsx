@@ -3,7 +3,7 @@ const { useState, useEffect } = React;
 const App = () => {
   const [tweaks, setTweaks] = useState(window.__TWEAKS__ || { mode: "light", layout: "editorial" });
   const [tweaksVisible, setTweaksVisible] = useState(false);
-  const [subpage, setSubpage] = useState(null);
+  const subpage = window.__SUBPAGE__ || null;
 
   useEffect(() => {
     document.documentElement.setAttribute("data-mode", tweaks.mode);
@@ -31,18 +31,23 @@ const App = () => {
     );
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
     return () => io.disconnect();
-  }, [subpage]);
+  }, []);
 
   return (
     <>
-      <Nav onOpen={setSubpage} />
-      <Hero />
-      <About />
-      <Services />
-      <Vehicle onOpen={setSubpage} />
-      <Recruit onOpen={setSubpage} />
-      <Contact />
-      <Subpage page={subpage} onClose={() => setSubpage(null)} />
+      <Nav />
+      {subpage ? (
+        <Subpage page={subpage} />
+      ) : (
+        <>
+          <Hero />
+          <About />
+          <Services />
+          <Vehicle />
+          <Recruit />
+          <Contact />
+        </>
+      )}
       <TweaksPanel visible={tweaksVisible} tweaks={tweaks} setTweaks={setTweaks} />
     </>
   );

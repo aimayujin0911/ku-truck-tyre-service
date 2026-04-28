@@ -1,30 +1,19 @@
-const Nav = ({ onOpen }) => {
+const Nav = () => {
   const items = [
-    { k: "about", l: "ABOUT" },
-    { k: "services", l: "SERVICES" },
-    { k: "vehicle", l: "VEHICLE" },
-    { k: "recruit", l: "RECRUIT" },
-    { k: "contact", l: "CONTACT" },
+    { l: "ABOUT", href: "./about.html" },
+    { l: "SERVICES", href: "./#services" },
+    { l: "VEHICLE", href: "./vehicle.html" },
+    { l: "RECRUIT", href: "./recruit.html" },
+    { l: "CONTACT", href: "./#contact" },
   ];
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
   return (
     <nav className="nav">
-      <div
-        className="nav-logo"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        style={{ cursor: "pointer" }}
-      >
+      <a href="./" className="nav-logo" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}>
         KU<sup>®</sup>
-      </div>
+      </a>
       <div className="nav-links">
         {items.map((it) => (
-          <a key={it.k} onClick={() => {
-            if (it.k === "about" || it.k === "recruit" || it.k === "vehicle") onOpen(it.k);
-            else scrollTo(it.k);
-          }}>{it.l}</a>
+          <a key={it.l} href={it.href}>{it.l}</a>
         ))}
       </div>
       <div className="nav-right">

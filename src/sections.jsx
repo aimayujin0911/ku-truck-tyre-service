@@ -81,7 +81,7 @@ const Business = () => (
   </section>
 );
 
-const Vehicle = ({ onOpen }) => (
+const Vehicle = () => (
   <section id="vehicle">
     <div className="sec-head">
       <div className="sec-id">§03 / VEHICLE</div>
@@ -97,7 +97,7 @@ const Vehicle = ({ onOpen }) => (
           { code: "VH-03", name: "4T ALUMI", sub: "Precision cargo", img: "./assets/truck-03-alumi.jpeg" },
           { code: "VH-04", name: "FLEET", sub: "Tour-ready", img: "./assets/truck-04-pair.jpeg" },
         ].map((v, i) => (
-          <div key={i} className="vh-card reveal" onClick={() => onOpen && onOpen('vehicle')}>
+          <a key={i} href="./vehicle.html" className="vh-card reveal" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
             <div className="photo" style={{ backgroundImage: `url(${v.img})` }} />
             <div className="meta">
               <span>{v.code}</span>
@@ -107,14 +107,14 @@ const Vehicle = ({ onOpen }) => (
               <div className="t">{v.name}</div>
               <div className="s">{v.sub}</div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
   </section>
 );
 
-const Recruit = ({ onOpen }) => (
+const Recruit = () => (
   <section id="recruit">
     <div className="sec-head">
       <div className="sec-id">§04 / RECRUIT</div>
@@ -131,7 +131,7 @@ const Recruit = ({ onOpen }) => (
           ツアー現場の熱も、テレビ局の緊張感も、KUのドライバーはぜんぶ見てきた。<br/>
           未経験からでも、丁寧に教えます。まず話を聞きに来てください。
         </p>
-        <div className="cta" onClick={() => onOpen('recruit')}>ENTRY →</div>
+        <a className="cta" href="./recruit.html" style={{ textDecoration: "none" }}>ENTRY →</a>
       </div>
 
       <div className="rct-photo reveal">
