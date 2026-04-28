@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CHAOYANG — ZC Rubber Truck Tyres / KU Official Distributor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css?v=5" />
+<style>
+  :root { --bg: #F4F6F8; --ink: #0A0F14; }
+  body { background: var(--bg); color: var(--ink); }
+
+  /* ========== CY TOP NAV ========== */
+  .cy-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 28px;
+    background: rgba(244,246,248,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .cy-nav-left { display: flex; align-items: center; gap: 14px; }
+  .cy-nav-logo {
+    font-family: "Anton", sans-serif;
+    font-size: 22px; letter-spacing: 0.04em;
+  }
+  .cy-nav-logo b { color: var(--accent-2); }
+  .cy-nav-back {
+    font-size: 10px; color: var(--muted);
+    text-decoration: none; padding: 6px 12px;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+  .cy-nav-back:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .cy-nav-links { display: flex; gap: 24px; }
+  .cy-nav-links a { color: var(--ink); text-decoration: none; }
+  .cy-nav-links a:hover { color: var(--accent-2); }
+
+  /* ========== HERO ========== */
+  .cy-hero {
+    position: relative;
+    min-height: 88vh;
+    padding: 120px 28px 40px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background: #0A0F14;
+    overflow: hidden;
+  }
+  .cy-hero-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(135deg, rgba(127,211,232,0.28) 0%, rgba(10,15,20,0) 45%),
+      linear-gradient(0deg, rgba(10,15,20,0.8) 0%, rgba(10,15,20,0.3) 50%, rgba(10,15,20,0.1) 100%),
+      radial-gradient(ellipse at 70% 60%, #1a2a38 0%, #050a0f 70%);
+  }
+  .cy-hero-bg::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: url("https://www.chaoyang-japan.jp/products/img/img_sec01b_home.jpg");
+    background-size: cover; background-position: center;
+    opacity: 0.3;
+    mix-blend-mode: luminosity;
+  }
+  .cy-hero-inner {
+    position: relative; z-index: 2;
+    color: #fff;
+    align-self: end;
+    max-width: 1400px; width: 100%;
+    margin: 0 auto;
+  }
+  .cy-hero-eyebrow {
+    display: inline-flex; gap: 10px; align-items: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    background: rgba(10,15,20,0.55);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 7px 13px;
+    margin-bottom: 28px;
+  }
+  .cy-hero-eyebrow .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+  .cy-hero-title {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(56px, 10vw, 180px);
+    line-height: 0.86;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+  }
+  .cy-hero-title .thin { -webkit-text-stroke: 1.5px #fff; color: transparent; }
+  .cy-hero-title .cy { color: var(--accent); font-style: italic; }
+  .cy-hero-lead {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 36px; align-items: end;
+    margin-top: 32px; padding-right: 12px;
+  }
+  .cy-hero-lead p {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 14px; line-height: 1.9;
+    color: rgba(255,255,255,0.88);
+    max-width: 440px;
+  }
+  .cy-stat { text-align: right; min-width: 80px; color: #fff; }
+  .cy-stat .n {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(32px, 3.4vw, 46px); line-height: 1;
+    color: var(--accent);
+  }
+  .cy-stat .l {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-top: 6px; line-height: 1.5;
+  }
+  .cy-hero-ticker {
+    position: relative; z-index: 2;
+    background: rgba(10,15,20,0.5);
+    border-top: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    margin: 0 -28px; padding: 10px 0;
+    white-space: nowrap; overflow: hidden;
+    backdrop-filter: blur(4px);
+  }
+  .cy-hero-ticker-track {
+    display: inline-flex; gap: 42px;
+    animation: ticker 45s linear infinite;
+    font-family: "Anton", sans-serif;
+    font-size: 22px; letter-spacing: 0.04em;
+    color: #fff; text-transform: uppercase;
+  }
+  .cy-hero-ticker-track .cy { color: var(--accent); }
+  .cy-hero-ticker-track .sep { color: rgba(255,255,255,0.3); }
+
+  /* ========== DISCOVER ========== */
+  .cy-section {
+    padding: 100px 28px;
+    max-width: 1600px; margin: 0 auto;
+  }
+  .cy-dh {
+    display: grid;
+    grid-template-columns: 140px 1fr minmax(240px, 360px);
+    gap: 32px; align-items: start;
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+    margin-bottom: 56px;
+  }
+  .cy-dh .id {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; letter-spacing: 0.12em; color: var(--muted);
+    text-transform: uppercase; padding-top: 6px;
+  }
+  .cy-dh .t {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(44px, 5vw, 88px); line-height: 0.92;
+    text-transform: uppercase; letter-spacing: 0.005em;
+  }
+  .cy-dh .t .cy { color: var(--accent-2); }
+  .cy-dh .s {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 13px; line-height: 1.9;
+    color: var(--muted); padding-top: 10px;
+  }
+
+  /* RANKING */
+  .cy-rank-wrap {
+    display: grid; grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px; align-items: start;
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 40px 36px;
+  }
+  .cy-rank-wrap h3 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(28px, 3vw, 44px); line-height: 1;
+    margin-bottom: 14px;
+  }
+  .cy-rank-wrap .sub {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 700; font-size: 16px; margin-bottom: 14px;
+  }
+  .cy-rank-wrap p {
+    font-size: 13px; line-height: 1.95;
+    color: var(--ink-2);
+  }
+  .cy-rank-wrap .big-num {
+    margin-top: 28px;
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .cy-rank-wrap .big-num > div {
+    padding: 18px 20px;
+    background: var(--bg-2);
+  }
+  .cy-rank-wrap .big-num b {
+    display: block;
+    font-family: "Anton", sans-serif;
+    font-size: 40px; letter-spacing: 0.01em;
+    color: var(--accent-2);
+    line-height: 1;
+  }
+  .cy-rank-wrap .big-num span {
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted);
+    margin-top: 8px;
+  }
+  .cy-rank-tbl {
+    font-family: "Noto Sans JP", sans-serif;
+  }
+  .cy-rank-tbl .tbl-head {
+    display: grid; grid-template-columns: 40px 1fr 1fr 90px;
+    padding: 10px 14px;
+    background: var(--ink); color: var(--bg);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .cy-rank-tbl .tbl-row {
+    display: grid; grid-template-columns: 40px 1fr 1fr 90px;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line-2);
+    align-items: center;
+    font-size: 12px;
+  }
+  .cy-rank-tbl .tbl-row.top {
+    background: linear-gradient(90deg, rgba(127,211,232,0.12), rgba(127,211,232,0));
+    border-bottom: 2px solid var(--accent-2);
+  }
+  .cy-rank-tbl .tbl-row.top .rank,
+  .cy-rank-tbl .tbl-row.top .brand {
+    font-family: "Anton", sans-serif; font-size: 20px;
+    color: var(--accent-2); letter-spacing: 0.02em;
+  }
+  .cy-rank-tbl .rank {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700; color: var(--muted);
+  }
+  .cy-rank-tbl .brand {
+    font-weight: 700;
+  }
+  .cy-rank-tbl .sales {
+    text-align: right;
+    font-family: "Anton", sans-serif;
+    font-size: 18px; letter-spacing: 0.02em;
+  }
+  .cy-rank-tbl .tbl-note {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.08em;
+    color: var(--muted); padding: 10px 14px; text-align: right;
+  }
+
+  /* GLOBAL MAP */
+  .cy-global {
+    background: var(--ink); color: var(--bg);
+    padding: 80px 28px;
+    margin: 40px 0;
+  }
+  .cy-global-inner {
+    max-width: 1600px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 56px; align-items: center;
+  }
+  .cy-global h3 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(44px, 5vw, 80px);
+    line-height: 0.92; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .cy-global .sub {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 700; font-size: 16px; margin-bottom: 18px;
+    color: var(--accent);
+  }
+  .cy-global p {
+    font-size: 13px; line-height: 1.95;
+    color: rgba(244,246,248,0.8);
+    max-width: 480px;
+  }
+  .cy-global-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px; margin-top: 32px;
+    border-top: 1px solid rgba(244,246,248,0.2);
+    padding-top: 24px;
+  }
+  .cy-global-stats b {
+    display: block;
+    font-family: "Anton", sans-serif;
+    font-size: 38px; color: var(--accent);
+    letter-spacing: 0.01em; line-height: 1;
+  }
+  .cy-global-stats span {
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; color: rgba(244,246,248,0.5);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-top: 8px; line-height: 1.5;
+  }
+  .cy-global-map {
+    position: relative;
+    aspect-ratio: 4/3;
+    background: rgba(244,246,248,0.05);
+    border: 1px solid rgba(244,246,248,0.2);
+    overflow: hidden;
+  }
+  .cy-global-map img {
+    width: 100%; height: 100%; object-fit: contain;
+    padding: 20px;
+    filter: invert(1) saturate(0) brightness(1.2) hue-rotate(180deg);
+    mix-blend-mode: screen;
+  }
+  .cy-global-map .dot {
+    position: absolute;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 20px var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .cy-global-map .dot:nth-child(2) { top: 38%; left: 74%; animation-delay: 0s; }
+  .cy-global-map .dot:nth-child(3) { top: 32%; left: 22%; animation-delay: 0.4s; }
+  .cy-global-map .dot:nth-child(4) { top: 44%; left: 48%; animation-delay: 0.8s; }
+  .cy-global-map .dot:nth-child(5) { top: 58%; left: 68%; animation-delay: 1.2s; }
+  .cy-global-map .dot:nth-child(6) { top: 66%; left: 28%; animation-delay: 1.6s; }
+
+  /* BRANDS UNDER ZC RUBBER */
+  .cy-brands {
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+  .cy-brands-head {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--line);
+    display: flex; justify-content: space-between;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; letter-spacing: 0.12em;
+    color: var(--muted); text-transform: uppercase;
+  }
+  .cy-brands-head b { color: var(--ink); font-weight: 500; font-family: "Anton", sans-serif; font-size: 18px; letter-spacing: 0.04em; }
+  .cy-brands-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+  }
+  .cy-brands-grid > div {
+    padding: 32px 20px 28px;
+    border-right: 1px solid var(--line);
+    text-align: center;
+  }
+  .cy-brands-grid > div:last-child { border-right: none; }
+  .cy-brands-grid > div.main {
+    background: var(--accent); color: var(--accent-ink);
+  }
+  .cy-brands-grid b {
+    display: block;
+    font-family: "Anton", sans-serif;
+    font-size: 22px; letter-spacing: 0.03em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .cy-brands-grid span {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.08em;
+    color: var(--muted); text-transform: uppercase;
+  }
+  .cy-brands-grid > div.main span { color: var(--accent-ink); opacity: 0.7; }
+
+  /* TIRE LINEUP */
+  .cy-lineup {
+    padding: 100px 28px;
+    max-width: 1600px; margin: 0 auto;
+  }
+  .cy-lineup-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+  }
+  .cy-tire {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 16px 12px 14px;
+    transition: transform 0.3s;
+  }
+  .cy-tire:hover { transform: translateY(-4px); border-color: var(--accent-2); }
+  .cy-tire .img {
+    aspect-ratio: 1;
+    background: var(--bg-2);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px;
+  }
+  .cy-tire .img img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+  .cy-tire .code {
+    font-family: "Anton", sans-serif;
+    font-size: 22px; letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .cy-tire .type {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.08em;
+    color: var(--muted); text-transform: uppercase;
+  }
+
+  /* FACILITY */
+  .cy-facility {
+    padding: 100px 28px;
+    background: var(--bg-2);
+  }
+  .cy-facility-inner {
+    max-width: 1600px; margin: 0 auto;
+  }
+  .cy-facility-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .cy-fac {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+  .cy-fac img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.85) contrast(1.05); }
+  .cy-fac .cap {
+    position: absolute; left: 14px; bottom: 14px; right: 14px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.08em;
+    color: #fff; text-transform: uppercase;
+    background: rgba(10,15,20,0.6);
+    padding: 6px 10px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* WHY / CTA shared with windpower look */
+  .cy-why {
+    padding: 100px 28px;
+    max-width: 1600px; margin: 0 auto;
+  }
+  .cy-why-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+  .cy-why-grid .wy {
+    padding: 32px 24px;
+    border-right: 1px solid var(--line);
+  }
+  .cy-why-grid .wy:last-child { border-right: none; }
+  .cy-why-grid .wy .n {
+    font-family: "Anton", sans-serif;
+    font-size: 48px; color: var(--accent-2);
+    line-height: 1; margin-bottom: 14px;
+  }
+  .cy-why-grid .wy .t {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 700; font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .cy-why-grid .wy .d {
+    font-size: 12px; line-height: 1.8; color: var(--muted);
+  }
+
+  .cy-cta {
+    background: var(--ink); color: var(--bg);
+    padding: 100px 28px 40px;
+  }
+  .cy-cta-inner { max-width: 1600px; margin: 0 auto; }
+  .cy-cta h2 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(64px, 12vw, 220px);
+    line-height: 0.86; text-transform: uppercase;
+    letter-spacing: -0.005em;
+  }
+  .cy-cta h2 em { font-style: italic; color: var(--accent); }
+  .cy-cta-row {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 32px;
+    border-top: 1px solid rgba(244,246,248,0.2);
+    margin-top: 60px; padding-top: 36px;
+  }
+  .cy-cta-row h5 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(244,246,248,0.5);
+    margin-bottom: 14px;
+  }
+  .cy-cta-row p { font-size: 14px; line-height: 1.9; }
+  .cy-cta-row a { color: var(--accent); text-decoration: none; }
+  .cy-cta-bottom {
+    display: flex; justify-content: space-between;
+    margin-top: 60px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; color: rgba(244,246,248,0.4);
+    letter-spacing: 0.08em;
+  }
+
+  @keyframes pulse {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.5; }
+  }
+
+  @media (max-width: 1180px) {
+    .cy-lineup-grid { grid-template-columns: repeat(5, 1fr); }
+    .cy-brands-grid { grid-template-columns: repeat(3, 1fr); }
+    .cy-brands-grid > div { border-bottom: 1px solid var(--line); }
+    .cy-brands-grid > div:nth-child(3n) { border-right: none; }
+  }
+  @media (max-width: 1100px) {
+    .cy-dh { grid-template-columns: 120px 1fr; }
+    .cy-dh .s { grid-column: 1 / -1; padding-top: 4px; }
+    .cy-rank-wrap { grid-template-columns: 1fr; }
+    .cy-global-inner { grid-template-columns: 1fr; }
+    .cy-facility-grid { grid-template-columns: repeat(2, 1fr); }
+    .cy-why-grid { grid-template-columns: 1fr 1fr; }
+    .cy-why-grid .wy { border-right: none; border-bottom: 1px solid var(--line); }
+  }
+  @media (max-width: 700px) {
+    .cy-hero-lead { grid-template-columns: 1fr 1fr; }
+    .cy-hero-lead p { grid-column: 1 / -1; }
+    .cy-dh { grid-template-columns: 1fr; }
+    .cy-lineup-grid { grid-template-columns: repeat(3, 1fr); }
+    .cy-cta-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="cy-nav">
+  <div class="cy-nav-left">
+    <a class="cy-nav-back" href="./index.html">← KU</a>
+    <div class="cy-nav-logo">CHAO<b>YANG</b></div>
+  </div>
+  <div class="cy-nav-links">
+    <a href="#about">ABOUT</a>
+    <a href="#lineup">LINEUP</a>
+    <a href="#facility">FACILITY</a>
+    <a href="#why">WHY</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="cy-hero">
+  <div class="cy-hero-bg"></div>
+  <div class="cy-hero-inner">
+    <div class="cy-hero-eyebrow">
+      <span class="dot"></span>
+      <span>CHAOYANG / KU OFFICIAL DISTRIBUTOR — JAPAN</span>
+    </div>
+    <h1 class="cy-hero-title">
+      COST<br/>
+      <span class="thin">DOWN,</span><br/>
+      <span class="cy">VALUE UP.</span>
+    </h1>
+    <div class="cy-hero-lead">
+      <p>ZC-RUBBER — 1958年創業、中国タイヤメーカー売上 <b>NO.1</b>。<br/>
+      高いハンドリング性能と優れたコストパフォーマンスを両立する輸入トラックタイヤ。</p>
+      <div class="cy-stat"><div class="n">#1</div><div class="l">CHINA<br/>BRAND</div></div>
+      <div class="cy-stat"><div class="n">TOP 10</div><div class="l">GLOBAL<br/>2020</div></div>
+      <div class="cy-stat"><div class="n">160+</div><div class="l">COUNTRIES<br/>&amp; REGIONS</div></div>
+    </div>
+  </div>
+
+  <div class="cy-hero-ticker">
+    <div class="cy-hero-ticker-track">
+      <span>TRUCK</span><span class="sep">◆</span>
+      <span class="cy">BUS</span><span class="sep">◆</span>
+      <span>INDUSTRIAL</span><span class="sep">◆</span>
+      <span>OFF-ROAD</span><span class="sep">◆</span>
+      <span class="cy">AGRICULTURAL</span><span class="sep">◆</span>
+      <span>SINCE 1958</span><span class="sep">◆</span>
+      <span>TRUCK</span><span class="sep">◆</span>
+      <span class="cy">BUS</span><span class="sep">◆</span>
+      <span>INDUSTRIAL</span><span class="sep">◆</span>
+      <span>OFF-ROAD</span><span class="sep">◆</span>
+      <span class="cy">AGRICULTURAL</span><span class="sep">◆</span>
+      <span>SINCE 1958</span><span class="sep">◆</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / RANKING -->
+<section class="cy-section" id="about">
+  <div class="cy-dh">
+    <div class="id">§01 / ABOUT</div>
+    <h2 class="t">About <span class="cy">Chaoyang.</span></h2>
+    <div class="s">1958年創業、ゴム靴の小さな工場から、中国最大のタイヤメーカーへ。世界トップ10の地位を築く、信頼のブランド。</div>
+  </div>
+
+  <div class="cy-rank-wrap">
+    <div>
+      <h3>CHINA &rsquo;S<br/>NUMBER ONE.</h3>
+      <div class="sub">中国タイヤメーカーランキング 1位</div>
+      <p>
+        「CHAOYANG(チャオヤン)タイヤ」は、ZCラバー(Zhongce Rubber Group Co,Ltd.)初のタイヤブランドで、最大の歴史を保持。2018年にはZCゴムグループは60周年を迎えた。<br/>
+        ゴム靴を生産する小さな工場から、世界のタイヤメーカー トップ10 へ成長。優れた製品と優れたサービスの評判に基づいて築かれた、中国で最も人気のあるタイヤブランド。
+      </p>
+      <div class="big-num">
+        <div><b>¥249.40</b><span>億元 / 2019年売上</span></div>
+        <div><b>60+</b><span>Years of History</span></div>
+      </div>
+    </div>
+
+    <div class="cy-rank-tbl">
+      <div class="tbl-head">
+        <span>#</span><span>企業</span><span>ブランド</span><span>売上</span>
+      </div>
+      <div class="tbl-row top">
+        <span class="rank">01</span><span class="brand">中策ゴム集団</span><span>CHAOYANG</span><span class="sales">249.4</span>
+      </div>
+      <div class="tbl-row"><span class="rank">02</span><span class="brand">山東玲瓏タイヤ</span><span>リンロン</span><span class="sales">171.6</span></div>
+      <div class="tbl-row"><span class="rank">03</span><span class="brand">賽輪集団</span><span>サイレン</span><span class="sales">143.4</span></div>
+      <div class="tbl-row"><span class="rank">04</span><span class="brand">山東昊華タイヤ</span><span>ランビゲーター</span><span class="sales">105.0</span></div>
+      <div class="tbl-row"><span class="rank">05</span><span class="brand">廈門正新ゴム工業</span><span>チェンシン</span><span class="sales">90.98</span></div>
+      <div class="tbl-row"><span class="rank">06</span><span class="brand">三角タイヤ</span><span>トライアングル</span><span class="sales">79.41</span></div>
+      <div class="tbl-row"><span class="rank">07</span><span class="brand">双銭タイヤ</span><span>ダブルコイン</span><span class="sales">72.11</span></div>
+      <div class="tbl-note">単位: 億元 / 2019年</div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL -->
+<section class="cy-global">
+  <div class="cy-global-inner">
+    <div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px;">§02 / GLOBAL</div>
+      <h3>Global<br/><span style="color: var(--accent);">Presence.</span></h3>
+      <div class="sub">2020年 世界タイヤメーカー TOP 75 中 10位</div>
+      <p>
+        北米・南米・ヨーロッパ・アフリカ・オセアニア・アジアの 6大陸、160以上の国と地域をカバー。<br/>
+        トラック・バス用ラジアルタイヤの販売・生産能力では 世界1位。
+      </p>
+      <div class="cy-global-stats">
+        <div><b>#10</b><span>Global Rank<br/>2020</span></div>
+        <div><b>#1</b><span>TBR Production<br/>Worldwide</span></div>
+        <div><b>6</b><span>Continents<br/>Covered</span></div>
+      </div>
+    </div>
+    <div class="cy-global-map">
+      <img src="https://www.chaoyang-japan.jp/products/img/map_sec02_home.png" alt="Global distribution map" />
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="cy-section">
+  <div class="cy-dh">
+    <div class="id">§03 / BRANDS</div>
+    <h2 class="t">ZC-RUBBER <span class="cy">Family.</span></h2>
+    <div class="s">ZC-Rubberが展開する6つのタイヤブランド。グローバル市場のニーズに応える多様なラインナップ。</div>
+  </div>
+
+  <div class="cy-brands">
+    <div class="cy-brands-head">
+      <span>PORTFOLIO / ZC-RUBBER GROUP</span>
+      <b>6 BRANDS</b>
+    </div>
+    <div class="cy-brands-grid">
+      <div class="main"><b>CHAOYANG</b><span>Premium Japan</span></div>
+      <div><b>WESTLAKE</b><span>ウエストレイク</span></div>
+      <div><b>GOODRIDE</b><span>グッドライド</span></div>
+      <div><b>ARISUN</b><span>アリスン</span></div>
+      <div><b>TRAZANO</b><span>トラザーノ</span></div>
+      <div><b>YARTU</b><span>ヤルトゥ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIRE LINEUP -->
+<section class="cy-lineup" id="lineup">
+  <div class="cy-dh">
+    <div class="id">§04 / LINEUP</div>
+    <h2 class="t">Truck Tire <span class="cy">Products.</span></h2>
+    <div class="s">コスト削減の救世主。高品質トラックタイヤ 14モデルを正規取扱。KUが用途に応じてベストな一本をご提案します。</div>
+  </div>
+
+  <div class="cy-lineup-grid">
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/az712.jpg" alt="AZ712"/></div><div class="code">AZ712</div><div class="type">Drive</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/az534.jpg" alt="AZ534"/></div><div class="code">AZ534</div><div class="type">Drive</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/az534_plus.jpg" alt="AZ534+"/></div><div class="code">AZ534+</div><div class="type">Drive Plus</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/csr1w.jpg" alt="CSR1W"/></div><div class="code">CSR1W</div><div class="type">Steer / Winter</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/cr976a.jpg" alt="CR976A"/></div><div class="code">CR976A</div><div class="type">Steer</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/cr960.jpg" alt="CR960"/></div><div class="code">CR960</div><div class="type">Steer</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/az850.jpg" alt="AZ850"/></div><div class="code">AZ850</div><div class="type">Drive</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/at161.jpg" alt="AT161"/></div><div class="code">AT161</div><div class="type">All Terrain</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/az650.jpg" alt="AZ650"/></div><div class="code">AZ650</div><div class="type">Drive</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/ns785.jpg" alt="NS785"/></div><div class="code">NS785</div><div class="type">All Position</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/nz788.jpg" alt="NZ788"/></div><div class="code">NZ788</div><div class="type">All Position</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/nz782.jpg" alt="NZ782"/></div><div class="code">NZ782</div><div class="type">All Position</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/nz780.jpg" alt="NZ780"/></div><div class="code">NZ780</div><div class="type">All Position</div></div>
+    <div class="cy-tire"><div class="img"><img src="https://www.chaoyang-japan.jp/img/index/cb972.jpg" alt="CB972"/></div><div class="code">CB972</div><div class="type">Mixed Service</div></div>
+  </div>
+</section>
+
+<!-- FACILITY -->
+<section class="cy-facility" id="facility">
+  <div class="cy-facility-inner">
+    <div class="cy-dh">
+      <div class="id">§05 / FACILITY</div>
+      <h2 class="t">Manufacturing <span class="cy">Bases.</span></h2>
+      <div class="s">中国国内の4大製造拠点と、ドイツ製の最先端生産設備。日本・韓国の専門家を含む国際R&Dチームが品質を支える。</div>
+    </div>
+    <div class="cy-facility-grid">
+      <div class="cy-fac">
+        <img src="https://www.chaoyang-japan.jp/products/img/img_sec05-01a.jpg" alt="PCR &amp; LTR Plant in Xiasha"/>
+        <div class="cap">PCR &amp; LTR Plant / Xiasha</div>
+      </div>
+      <div class="cy-fac">
+        <img src="https://www.chaoyang-japan.jp/products/img/img_sec05-01b.jpg" alt="TBR Plant in Xiasha"/>
+        <div class="cap">TBR Plant / Xiasha</div>
+      </div>
+      <div class="cy-fac">
+        <img src="https://www.chaoyang-japan.jp/products/img/img_sec05-02b.jpg" alt="Germany Fischer Cutting Machine"/>
+        <div class="cap">Germany Fischer Cutting</div>
+      </div>
+      <div class="cy-fac">
+        <img src="https://www.chaoyang-japan.jp/products/img/img_sec05-02c.jpg" alt="Germany Krupp Building Machine"/>
+        <div class="cap">Germany Krupp Building</div>
+      </div>
+      <div class="cy-fac">
+        <img src="https://www.chaoyang-japan.jp/products/img/img_sec05-03a.jpg" alt="ASTEC Tyre Uniformity Testing Machine"/>
+        <div class="cap">ASTEC Uniformity Test</div>
+      </div>
+      <div class="cy-fac">
+        <img src="https://www.chaoyang-japan.jp/products/img/img_sec05-03b.jpg" alt="Y.MITS Tyre X-ray Inspection"/>
+        <div class="cap">Y.MITS X-ray Inspection</div>
+      </div>
+      <div class="cy-fac">
+        <img src="https://www.chaoyang-japan.jp/products/img/img_sec05-04a.jpg" alt="VMI Tread Wearing Test"/>
+        <div class="cap">VMI Tread Wearing Test</div>
+      </div>
+      <div class="cy-fac">
+        <img src="https://www.chaoyang-japan.jp/products/img/img_sec05-04b.jpg" alt="Noise Analysis Laboratory"/>
+        <div class="cap">Noise Analysis Lab</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="cy-why" id="why">
+  <div class="cy-dh">
+    <div class="id">§06 / WHY</div>
+    <h2 class="t">Why <span class="cy">KU + CY.</span></h2>
+    <div class="s">KUはCHAOYANG日本正規流通のパートナー。自社運送で培った現場経験と、世界基準の品質を、あなたの現場へ。</div>
+  </div>
+  <div class="cy-why-grid">
+    <div class="wy"><div class="n">01</div><div class="t">コストパフォーマンス</div><div class="d">有名メーカーのOEM生産も任される品質を、競争力ある価格で提供。</div></div>
+    <div class="wy"><div class="n">02</div><div class="t">正規ディストリビューター</div><div class="d">日本正規ディストリビューター経由で仕入れ。品質保証とアフターサポート完備。</div></div>
+    <div class="wy"><div class="n">03</div><div class="t">用途別提案</div><div class="d">トラック・バス・建機まで、KU自社運送の現場経験から最適銘柄を提案。</div></div>
+    <div class="wy"><div class="n">04</div><div class="t">出張交換対応</div><div class="d">現場やデポへの出張タイヤ交換。稼働を止めずにメンテナンス可能。</div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cy-cta" id="contact">
+  <div class="cy-cta-inner">
+    <h2>RUN<br/><em>LONGER.</em></h2>
+    <div class="cy-cta-row">
+      <div>
+        <h5>KU — DISTRIBUTOR</h5>
+        <p>〒341-0058<br/>埼玉県三郷市彦江1-213-3<br/><a href="tel:048-952-2288">048-952-2288</a></p>
+      </div>
+      <div>
+        <h5>INQUIRY</h5>
+        <p><a href="./index.html#contact">お問い合わせ →</a><br/>平日 8:00 – 17:00</p>
+      </div>
+      <div>
+        <h5>CHAOYANG OFFICIAL</h5>
+        <p><a href="https://www.chaoyang-japan.jp/" target="_blank" rel="noopener">chaoyang-japan.jp ↗</a><br/>ZC-Rubber Group</p>
+      </div>
+      <div>
+        <h5>RELATED</h5>
+        <p><a href="./index.html">KU HOME →</a><br/><a href="./windpower.html">WINDPOWER LP →</a></p>
+      </div>
+    </div>
+    <div class="cy-cta-bottom">
+      <span>© 2026 KU — CHAOYANG OFFICIAL DISTRIBUTOR (JAPAN)</span>
+      <span>SAITAMA JP — EST.1981</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
