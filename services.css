@@ -16,11 +16,12 @@
   border-right: 1px solid var(--line);
   text-decoration: none;
   color: var(--ink);
-  transition: background 0.3s;
+  transition: background 0.3s ease, color 0.3s ease;
   position: relative;
   min-height: 200px;
 }
 .svc-tile:last-child { border-right: none; }
+.svc-tile .svc-tag, .svc-tile .svc-jp { transition: color 0.3s ease; }
 .svc-tile:hover { background: var(--ink); color: var(--bg); }
 .svc-tile:hover .svc-tag { color: var(--accent); }
 .svc-tile:hover .svc-jp { color: var(--bg); }
