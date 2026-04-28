@@ -106,6 +106,46 @@ const RecruitBody = () => {
 
   return (
     <div>
+      {/* ===== HERO BANNER ===== */}
+      <div style={{
+        position: "relative",
+        width: "100%",
+        aspectRatio: "21 / 9",
+        minHeight: 360,
+        maxHeight: 600,
+        overflow: "hidden",
+        marginBottom: 56,
+        border: "1px solid var(--line)",
+      }}>
+        <img
+          src="./assets/truck-logo.jpeg"
+          alt="KU TRUCK & TYRE SERVICE — 車体ロゴ"
+          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", filter: "saturate(0.95) contrast(1.05)" }}
+        />
+        <div style={{
+          position: "absolute", inset: 0,
+          background: "linear-gradient(180deg, rgba(10,15,20,0.25) 0%, rgba(10,15,20,0) 30%, rgba(10,15,20,0) 60%, rgba(10,15,20,0.65) 100%)",
+          pointerEvents: "none",
+        }} />
+        <div style={{
+          position: "absolute", top: 18, left: 22,
+          ...mono, fontSize: 11, color: "#fff", letterSpacing: "0.14em",
+          padding: "6px 10px", background: "rgba(0,0,0,0.4)", backdropFilter: "blur(4px)",
+        }}>§ KU LIVERY / 2026</div>
+        <div style={{
+          position: "absolute", right: 22, bottom: 22,
+          ...mono, fontSize: 10, color: "rgba(255,255,255,0.85)", letterSpacing: "0.16em",
+          textTransform: "uppercase",
+        }}>MISATO / SAITAMA / JP</div>
+        <div style={{
+          position: "absolute", left: 22, bottom: 22, color: "#fff",
+          maxWidth: "70%",
+        }}>
+          <div style={{ ...mono, fontSize: 10, letterSpacing: "0.2em", color: "var(--accent)", marginBottom: 8 }}>NOW HIRING — DRIVERS / TYRE / MECH</div>
+          <div style={{ ...anton, fontSize: "clamp(24px, 3vw, 44px)", lineHeight: 1.05, letterSpacing: "0.01em" }}>RUN WITH US.</div>
+        </div>
+      </div>
+
       {/* ===== HERO LEAD ===== */}
       <div style={{ maxWidth: 980, marginBottom: 80 }}>
         <div className="sec-id" style={{ marginBottom: 16 }}>§ CAREERS / RECRUIT</div>
