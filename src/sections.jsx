@@ -14,7 +14,7 @@ const About = () => (
           スピードと柔軟性が、KUのDNA。
         </h3>
         <p className="about-body reveal">
-          株式会社KU・TRUCK&TYRE・SERVICEは、1981年創業の運送会社。<br/>
+          株式会社KU TRUCK&TYRE SERVICEは、1981年創業の運送会社。<br/>
           テレビ関連やイベント・舞台などの資材運搬を主軸に、一般貨物輸送・倉庫業まで手がけています。<br/><br/>
           深夜の搬入、ギリギリのスケジュール、天候の変化 — 現場に「間に合う」ために、ドライバー、車両、オペレーションが一体となって動く。それがKUのやり方です。
         </p>
@@ -174,7 +174,7 @@ const Contact = () => (
       </div>
     </div>
     <div className="contact-bottom">
-      <span>© 2026 株式会社 KU・TRUCK&TYRE・SERVICE</span>
+      <span>© 2026 株式会社 KU TRUCK&TYRE SERVICE</span>
       <span>EST.1981 / SAITAMA JP</span>
     </div>
   </section>

@@ -484,7 +484,7 @@ const Subpage = ({ page }) => {
 
           <div style={{ display: "grid", gridTemplateColumns: "180px 1fr", gap: 0, borderTop: "1px solid var(--line)" }}>
             {[
-              ["商号", "株式会社 KU・TRUCK&TYRE・SERVICE"],
+              ["商号", "株式会社 KU TRUCK&TYRE SERVICE"],
               ["設立", "1981年 (昭和56年)"],
               ["代表者", "代表取締役 —"],
               ["所在地", "〒341-0058 埼玉県三郷市彦江1-213-3"],
